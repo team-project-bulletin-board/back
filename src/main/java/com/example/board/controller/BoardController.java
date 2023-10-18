@@ -19,7 +19,7 @@ public class BoardController {
 
         boardService.write(board);
 
-        return "성공";
+        return "작성 성공";
     }
 
     @GetMapping(path = "/getList")
@@ -49,4 +49,13 @@ public class BoardController {
 
         return "수정 성공";
     }
+
+    @DeleteMapping(path = "/delete/{id}")
+    public String Delete(@PathVariable int id) {
+
+        boardService.boardDelete(id);
+
+        return "삭제 성공";
+    }
+
 }
